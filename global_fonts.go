@@ -46,12 +46,16 @@ func (font BitmapFont) DrawText(text string, x, y int32, theColor color.RGBA) {
 		for k := range text {
 			if text[k] != ' ' {
 				the_shape := layers[i].Mapping[text[k]]
-				offset := the_shape.Offset[0]
-				if kern, found := (*layers[i].Kerning)[[2]byte{last_char, text[k]}]; found {
-					offset += kern
+				offset_x, offset_y := the_shape.Offset[0], the_shape.Offset[1]
+				kern := layers[i].Kerning
+				if kern != nil {
+					if kern_val, found := (*kern)[[2]byte{last_char, text[k]}]; found {
+						offset_x += kern_val
+					}
 				}
-				rl.DrawTextureRec(texture, the_shape.SourceRect, vec2(cx+offset, cy-(layers[i].Ascent-the_shape.Offset[1])), theColor)
+				rl.DrawTextureRec(texture, the_shape.SourceRect, vec2(cx+offset_x, cy-(layers[i].Ascent-the_shape.Offset[1]-offset_y)), theColor)
 				cx += the_shape.Width
+				cy += offset_y
 			} else {
 				cx += layers[i].SpaceWidth
 			}
@@ -61,23 +65,28 @@ func (font BitmapFont) DrawText(text string, x, y int32, theColor color.RGBA) {
 }
 
 func (font BitmapFont) StringWidth(text string) int32 {
-	layer := font.Layers[0]
-	var total_width int32 = 0
-	var last_char byte = 0
-	for i := range text {
-		if text[i] != ' ' {
-			the_shape := font.Layers[0].Mapping[text[i]]
-			offset := the_shape.Offset[0]
-			if kern, found := (*layer.Kerning)[[2]byte{last_char, text[i]}]; found {
-				offset += kern
+	var max_width int32 = 0
+	for i := range font.Layers {
+		var total_width int32 = 0
+		var last_char byte = 0
+		for k := range text {
+			if text[k] != ' ' {
+				the_shape := font.Layers[i].Mapping[text[k]]
+				total_width += the_shape.Width
+				kern := font.Layers[i].Kerning
+				if kern != nil {
+					if kern_val, found := (*kern)[[2]byte{last_char, text[k]}]; found {
+						total_width += kern_val
+					}
+				}
+			} else {
+				total_width += font.Layers[i].SpaceWidth
 			}
-			total_width += the_shape.Width + offset
-		} else {
-			total_width += font.Layers[0].SpaceWidth
+			last_char = text[k]
 		}
-		last_char = text[i]
+		max_width = max(max_width, total_width)
 	}
-	return total_width
+	return max_width
 }
 
 var gFontTextures map[string]rl.Texture2D = make(map[string]rl.Texture2D)
@@ -89,7 +98,7 @@ func DestroyFontTextures() {
 }
 
 func InitFonts() {
-	gFonts[FontType_Float] = loadFont("fonts/CancunFloat14.json")
+	gFonts[FontType_Float] = loadFont("./fonts/CancunFloat14.json")
 }
 
 func loadFont(filePath string) BitmapFont {
@@ -97,8 +106,8 @@ func loadFont(filePath string) BitmapFont {
 	json := string(raw)
 	layers := gjson.Get(json, "Layers").Array()
 	font := BitmapFont{Layers: make([]FontLayer, len(layers))}
-	for i := range layers {
-		obj := layers[i].Map()
+	for k := range layers {
+		obj := layers[k].Map()
 		layer := FontLayer{
 			Name:          obj["Name"].String(),
 			ImageName:     obj["Image"].String(),
@@ -109,7 +118,7 @@ func loadFont(filePath string) BitmapFont {
 		}
 
 		if _, found := gFontTextures[layer.ImageName]; !found {
-			gFontTextures[layer.ImageName] = rl.LoadTexture("fonts/" + layer.ImageName + ".png")
+			gFontTextures[layer.ImageName] = rl.LoadTexture("./fonts/" + layer.ImageName + ".png")
 		}
 
 		char_list := gjson.Get(json, obj["Chars"].String()).Array()
@@ -131,7 +140,7 @@ func loadFont(filePath string) BitmapFont {
 			layer.Mapping[cache_chars[i]].Offset = [2]int32{int32(tmp[0].Int()), int32(tmp[1].Int())}
 		}
 
-		char_srcrects := gjson.Get(json, obj["ImageMap"].String()).Array()
+		char_srcrects := gjson.Get(json, obj["CharSrcRects"].String()).Array()
 		for i := range char_srcrects {
 			tmp := char_srcrects[i].Array()
 			layer.Mapping[cache_chars[i]].SourceRect = rl.NewRectangle(
@@ -151,7 +160,7 @@ func loadFont(filePath string) BitmapFont {
 			layer.Kerning = &tmp_map
 		}
 
-		font.Layers[i] = layer
+		font.Layers[k] = layer
 	}
 	return font
 }

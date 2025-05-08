@@ -191,7 +191,7 @@ func (b *Board) DrawPlaying() {
 	for i := range b.CurveList {
 		b.CurveList[i].DrawBalls(b.BallDrawer)
 	}
-	b.BallDrawer.Draw(b.ParticleMgr)
+	b.BallDrawer.Draw(b.SpriteMgr, b.ParticleMgr)
 	b.Frog.Draw()
 
 	if b.ShowGuide {
@@ -291,7 +291,7 @@ func (b *Board) StartLevel() {
 	b.GameState = GameState_Playing
 	b.StateCount = 0
 	b.Frog.FireVel = b.LevelDesc.FireSpeed
-	//b.Frog.SetPos(b.LevelDesc.FrogX, b.LevelDesc.FrogY)
+	b.Frog.SetPos(b.LevelDesc.FrogX, b.LevelDesc.FrogY)
 	b.SoundMgr.PlayLoop(LoopType_RollIn)
 	b.LevelBeginning = true
 }

@@ -1,8 +1,11 @@
 package main
 
 import (
+	"image"
 	"image/color"
+	"image/png"
 	"math"
+	"os"
 
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
@@ -11,8 +14,16 @@ type SpriteMgr struct {
 	BackgroundImage      rl.Texture2D
 	UpdateCnt            int32
 	InSpace, SpaceScroll bool
+	Sprites              [MaxPriority][]SpriteImage
+	HoleMappings         []int32
 	HoleInfos            []HoleInfo
 	HoleFlashes          []HoleFlash
+}
+
+type SpriteImage struct {
+	X, Y    int32
+	VX, VY  float32
+	Texture rl.Texture2D
 }
 
 type HoleInfo struct {
@@ -69,7 +80,48 @@ func (mgr *SpriteMgr) DrawHole(theHoleIndex int, tint color.RGBA) {
 		-hole_info.Rotation*rl.Rad2deg, tint)
 }
 
-func (mgr *SpriteMgr) PlaceHole(theX, theY int32, theRotation float32) {
+func (mgr *SpriteMgr) DrawSprites(thePriority int32) {
+	mgr.DrawSprites2(mgr.Sprites[thePriority])
+}
+
+func (mgr *SpriteMgr) DrawSprites2(theList []SpriteImage) {
+	for i := range theList {
+		rl.DrawTexture(theList[i].Texture, theList[i].X, theList[i].Y, rl.White)
+	}
+}
+
+func (mgr *SpriteMgr) SetupLevel(theLevel *LevelDesc) {
+	for i := range theLevel.Sprites {
+		desc := theLevel.Sprites[i]
+		down_cast := rl.LoadImageFromTexture(mgr.BackgroundImage)
+		background := down_cast.ToImage().(*image.RGBA)
+
+		f, _ := os.Open(desc.ImagePath)
+		defer f.Close()
+		tmp, _ := png.Decode(f)
+
+		the_mask := tmp.(*image.RGBA)
+		final := image.NewRGBA(image.Rect(0, 0, the_mask.Rect.Dx(), the_mask.Rect.Dy()))
+		xint, yint := int(desc.X), int(desc.Y)
+		for y := range the_mask.Rect.Dy() {
+			for x := range the_mask.Rect.Dx() {
+				pixel := background.RGBAAt(x+xint, y+yint)
+				final.SetRGBA(x, y, color.RGBA{pixel.R, pixel.G, pixel.B, the_mask.RGBAAt(x, y).R})
+			}
+		}
+
+		re_texture := rl.LoadTextureFromImage(rl.NewImageFromImage(final))
+		priority := desc.Priority
+		if priority >= MaxPriority {
+			priority = MaxPriority - 1
+		}
+		mgr.Sprites[priority] = append(mgr.Sprites[priority], SpriteImage{
+			desc.X, desc.Y, 0, 0, re_texture,
+		})
+	}
+}
+
+func (mgr *SpriteMgr) PlaceHole(theCurveIndex, theX, theY int32, theRotation float32) {
 	rotation := float64(theRotation)
 	for rotation < 0 {
 		rotation += math.Pi * 2
@@ -110,6 +162,16 @@ func (mgr *SpriteMgr) PlaceHole(theX, theY int32, theRotation float32) {
 		hole.Brightness = append(hole.Brightness, 0)
 		mgr.HoleInfos = append(mgr.HoleInfos, hole)
 	}
+
+	// widen
+	for i := range mgr.HoleInfos {
+		widen_for_index(&mgr.HoleInfos[i].PercentOpen, int(theCurveIndex))
+		widen_for_index(&mgr.HoleInfos[i].Brightness, int(theCurveIndex))
+	}
+
+	// also widen it
+	widen_for_index(&mgr.HoleMappings, int(theCurveIndex))
+	mgr.HoleMappings[theCurveIndex] = i
 }
 
 func (mgr *SpriteMgr) Update() {
@@ -118,7 +180,7 @@ func (mgr *SpriteMgr) Update() {
 }
 
 func (mgr *SpriteMgr) UpdateHole(theCurveIndex int32, thePercentOpen float32) {
-	hole := &mgr.HoleInfos[theCurveIndex]
+	hole := &mgr.HoleInfos[mgr.HoleMappings[theCurveIndex]]
 	hole.PercentOpen[theCurveIndex] = thePercentOpen
 
 	the_max := thePercentOpen
@@ -148,7 +210,7 @@ func (mgr *SpriteMgr) UpdateHoles() {
 			brightness = 255 - (flash.UpdateCnt-30)*255/30
 		}
 
-		hole := &mgr.HoleInfos[flash.CurveIndex]
+		hole := &mgr.HoleInfos[mgr.HoleMappings[flash.CurveIndex]]
 		hole.Brightness[flash.CurveIndex] = brightness
 
 		for k := range hole.Brightness {

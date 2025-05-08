@@ -179,8 +179,9 @@ func (mgr *WayPointMgr) InTunnel2(theBall *Ball, inFront bool) bool {
 	}
 }
 
-func (mgr *WayPointMgr) LoadWayPoints(pathPoints []PathPoint) {
-	for i := range pathPoints {
+func (mgr *WayPointMgr) LoadCurve(filePath string) {
+	path_points := LoadCurveData(filePath)
+	for i := range path_points {
 		mgr.WayPoints = append(mgr.WayPoints, WayPoint{
 			HasPerpendicular: false,
 			Perpendicular:    rl.Vector3Zero(),
@@ -188,10 +189,10 @@ func (mgr *WayPointMgr) LoadWayPoints(pathPoints []PathPoint) {
 			Rotation:         0,
 			AvgRotation:      0,
 			PathPoint: PathPoint{
-				X:        pathPoints[i].X,
-				Y:        pathPoints[i].Y,
-				InTunnel: pathPoints[i].InTunnel,
-				Priority: pathPoints[i].Priority,
+				X:        path_points[i].X,
+				Y:        path_points[i].Y,
+				InTunnel: path_points[i].InTunnel,
+				Priority: path_points[i].Priority,
 			},
 		})
 	}

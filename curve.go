@@ -15,8 +15,9 @@ type BallDrawer struct {
 	Balls, Shadows       [MaxPriority][1024]*Ball
 }
 
-func (drawer *BallDrawer) Draw(theParticleMgr *ParticleMgr) {
+func (drawer *BallDrawer) Draw(theSpriteMgr *SpriteMgr, theParticleMgr *ParticleMgr) {
 	for i := range MaxPriority {
+		theSpriteMgr.DrawSprites(i)
 		theParticleMgr.Draw(i)
 		for k := range drawer.NumShadows[i] {
 			drawer.Shadows[i][k].DrawShadow()
@@ -1006,6 +1007,7 @@ func (curve *Curve) SetupLevel(theDesc *LevelDesc, theSpriteMgr *SpriteMgr, theC
 	curve.LevelDesc = theDesc
 	curve.CurveDesc = &theDesc.CurveDescs[theCurveIndex]
 	curve.SpriteMgr = theSpriteMgr
+	curve.WayPointMgr.LoadCurve(theDesc.CurveDescs[theCurveIndex].FilePath)
 	curve.CurveIndex = theCurveIndex
 
 	skull_rotation := float32(curve.CurveDesc.SkullRotation)
@@ -1023,7 +1025,7 @@ func (curve *Curve) SetupLevel(theDesc *LevelDesc, theSpriteMgr *SpriteMgr, theC
 		}
 	}
 
-	curve.SpriteMgr.PlaceHole(hole_x, hole_y, skull_rotation)
+	curve.SpriteMgr.PlaceHole(curve.CurveIndex, hole_x, hole_y, skull_rotation)
 	curve.DangerPoint = curve.WayPointMgr.GetNumPoints() - curve.CurveDesc.DangerDistance
 	if curve.DangerPoint >= curve.WayPointMgr.GetNumPoints() {
 		curve.DangerPoint = curve.WayPointMgr.GetEndPoint()

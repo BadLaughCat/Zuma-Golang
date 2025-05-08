@@ -27,22 +27,27 @@ func main() {
 	InitFonts()
 	globalBoard = NewBoard()
 
-	globalBoard.SpriteMgr.BackgroundImage = rl.LoadTexture("levels/spiral/Spiral.jpg")
-	rl.SetTextureFilter(globalBoard.SpriteMgr.BackgroundImage, rl.FilterTrilinear)
-	defer rl.UnloadTexture(globalBoard.SpriteMgr.BackgroundImage)
+	level_parser := NewLevelParser()
+	level_parser.ParseLevels("./levels/levels.json")
+
 	globalBoard.ScoreTarget = 1000
 	globalBoard.TargetBarSize = 256
-	globalBoard.LevelDesc.CurveDescs = make([]CurveDesc, 1)
-	globalBoard.LevelDesc.CurveDescs[0] = NewCurveDesc()
-	globalBoard.CurveList = make([]Curve, 1)
+	base_desc := level_parser.GraphicsMap["serpents"]
+	globalBoard.LevelDesc = &base_desc
+	globalBoard.SpriteMgr.BackgroundImage = rl.LoadTexture("./levels/serpents/" + base_desc.ImagePath + ".jpg")
+	rl.SetTextureFilter(globalBoard.SpriteMgr.BackgroundImage, rl.FilterTrilinear)
+	defer rl.UnloadTexture(globalBoard.SpriteMgr.BackgroundImage)
+	globalBoard.SpriteMgr.SetupLevel(&base_desc)
+	globalBoard.CurveList = make([]Curve, 2)
 	globalBoard.CurveList[0] = Curve{Board: globalBoard, WayPointMgr: new(WayPointMgr), CurveIndex: 0}
-	globalBoard.CurveList[0].WayPointMgr.LoadWayPoints(LoadCurveData("levels/spiral/spiral.dat"))
+	globalBoard.CurveList[1] = Curve{Board: globalBoard, WayPointMgr: new(WayPointMgr), CurveIndex: 1}
 	globalBoard.CurveList[0].SetupLevel(globalBoard.LevelDesc, globalBoard.SpriteMgr, 0)
+	globalBoard.CurveList[1].SetupLevel(globalBoard.LevelDesc, globalBoard.SpriteMgr, 1)
 
 	globalBoard.StartLevel()
 	for i := range globalBoard.CurveList {
 		globalBoard.CurveList[i].StartLevel()
-		globalBoard.CurveList[0].DangerPoint = globalBoard.CurveList[0].WayPointMgr.GetNumPoints() - globalBoard.CurveList[0].CurveDesc.DangerDistance
+		globalBoard.CurveList[i].DangerPoint = globalBoard.CurveList[i].WayPointMgr.GetNumPoints() - globalBoard.CurveList[i].CurveDesc.DangerDistance
 	}
 
 	for !rl.WindowShouldClose() {

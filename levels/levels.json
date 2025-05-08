@@ -1,0 +1,467 @@
+{
+	"Graphics": [{
+		"id": "tiltspiral",
+		"curves": ["tiltspiral"],
+		"image": "tiltspiral",
+		"dispname": "When Spirals Attack",
+		"frogx": 242, "frogy": 248,
+		"TreasurePoints": [
+			{ "x": 576, "y": 431, "dist1": 20 },
+			{ "x": 77, "y": 423, "dist1": 35 },
+			{ "x": 70, "y": 57, "dist1": 45 }]
+	}, {
+		"id": "underover",
+		"curves": ["underover"],
+		"image": "underover",
+		"dispname": "Mud Slide",
+		"frogx": 334, "frogy": 247,
+		"TreasurePoints": [
+			{ "x": 76, "y": 431, "dist1": 32 },
+			{ "x": 590, "y": 437, "dist1": 50 },
+			{ "x": 584, "y": 100, "dist1": 60 }],
+		"Cutouts": [
+			{ "image": "left", "pri": 1, "x": 0, "y": 118 },
+			{ "image": "right", "pri": 1, "x": 311, "y": 0 }]
+	}, {
+		"id": "longrange",
+		"curves": ["longrange"],
+		"image": "longrange",
+		"dispname": "Long Range",
+		"frogx": 450, "frogy": 240,
+		"TreasurePoints": [
+			{ "x": 73, "y": 71, "dist1": 0 },
+			{ "x": 73, "y": 241, "dist1": 60 },
+			{ "x": 342, "y": 125, "dist1": 82 }]
+	}, {
+		"id": "claw",
+		"curves": ["claw"],
+		"image": "claw",
+		"dispname": "Osprey Talon",
+		"frogx": 333, "frogy": 235,
+		"TreasurePoints": [
+			{ "x": 76, "y": 52, "dist1": 0 },
+			{ "x": 584, "y": 63, "dist1": 20 },
+			{ "x": 34, "y": 444, "dist1": 60 }]
+	}, {
+		"id": "triangle",
+		"curves": ["triangle"],
+		"image": "triangle",
+		"dispname": "Landing Pad",
+		"frogx": 369, "frogy": 277,
+		"TreasurePoints": [
+			{ "x": 26, "y": 128, "dist1": 0 },
+			{ "x": 563, "y": 108, "dist1": 45 },
+			{ "x": 177, "y": 87, "dist1": 55 }]
+	}, {
+		"id": "inversespiral",
+		"curves": ["inversespiral"],
+		"image": "inversespiral",
+		"dispname": "Zumaic Exodus",
+		"frogx": 424, "frogy": 263,
+		"TreasurePoints": [
+			{ "x": 319, "y": 419, "dist1": 15 },
+			{ "x": 600, "y": 446, "dist1": 22 },
+			{ "x": 603, "y": 56, "dist1": 30 }],
+		"Cutouts": [
+			{ "image": "tunnel", "pri": 1, "x": 107, "y": 157 }]
+	}, {
+		"id": "loopy",
+		"curves": ["loopy"],
+		"image": "loopy",
+		"dispname": "Mouth of Centeotl",
+		"frogx": 325, "frogy": 114,
+		"TreasurePoints": [
+			{ "x": 65, "y": 439, "dist1": 20 },
+			{ "x": 31, "y": 59, "dist1": 36 },
+			{ "x": 524, "y": 277, "dist1": 60 }],
+		"Cutouts": [
+			{ "image": "tunnel", "pri": 1, "x": 240, "y": 253 }]
+	}, {
+		"id": "turnaround",
+		"curves": ["turnaround"],
+		"image": "turnaround",
+		"dispname": "Switchback",
+		"frogx": 300, "frogy": 230,
+		"TreasurePoints": [
+			{ "x": 45, "y": 53, "dist1": 0 },
+			{ "x": 595, "y": 68, "dist1": 35 },
+			{ "x": 587, "y": 435, "dist1": 45 }]
+	}, {
+		"id": "squaresville",
+		"curves": ["squaresville"],
+		"image": "squaresville",
+		"dispname": "Codex of Mixtec",
+		"frogx": 324, "frogy": 284,
+		"TreasurePoints": [
+			{ "x": 610, "y": 230, "dist1": 37 },
+			{ "x": 610, "y": 374, "dist1": 42 },
+			{ "x": 25, "y": 137, "dist1": 67 }]
+	}, {
+		"id": "warshak",
+		"curves": ["warshak"],
+		"image": "warshak",
+		"dispname": "Rorschach",
+		"frogx": 305, "frogy": 338,
+		"TreasurePoints": [
+			{ "x": 551, "y": 314, "dist1": 25 },
+			{ "x": 66, "y": 82, "dist1": 40 },
+			{ "x": 70, "y": 375, "dist1": 60 }]
+	}, {
+		"id": "overunder",
+		"curves": ["overunder"],
+		"image": "overunder",
+		"dispname": "Sun Stone",
+		"frogx": 307, "frogy": 278,
+		"TreasurePoints": [
+			{ "x": 50, "y": 66, "dist1": 0 },
+			{ "x": 55, "y": 434, "dist1": 38 },
+			{ "x": 546, "y": 328, "dist1": 66 }],
+		"Cutouts": [
+			{ "image": "tunnel01", "pri": 1, "x": 0, "y": 27 },
+			{ "image": "tunnel02", "pri": 1, "x": 444, "y": 74 }]
+	}, {
+		"id": "spaceinvaders",
+		"curves": ["spaceinvaders"],
+		"image": "spaceinvaders",
+		"dispname": "Lair of the Mud Snake",
+		"frogx": 271, "frogy": 358,
+		"TreasurePoints": [
+			{ "x": 212, "y": 136, "dist1": 60 },
+			{ "x": 602, "y": 163, "dist1": 70 },
+			{ "x": 516, "y": 265, "dist1": 85 }],
+		"Cutouts": [
+			{ "image": "tunnel", "pri": 1, "x": 34, "y": 18 }]
+	}, {
+		"id": "coaster",
+		"curves": ["coaster"],
+		"image": "coaster",
+		"dispname": "Altar of Tlaloc",
+		"frogx": 325, "frogy": 240,
+		"TreasurePoints": [
+			{ "x": 35, "y": 108, "dist1": 0},
+			{ "x": 602, "y": 446, "dist1": 22},
+			{ "x": 585, "y": 50, "dist1": 32}],
+		"Cutouts": [
+			{ "image": "tunnel01", "pri": 1, "x": 0, "y": 0 },
+			{ "image": "tunnel02", "pri": 1, "x": 419, "y": 0 }]
+	}, {
+		"id": "spiral",
+		"curves": ["spiral"],
+		"image": "spiral",
+		"dispname": "Spiral of Doom",
+		"frogx": 327, "frogy": 233,
+		"TreasurePoints": [
+			{ "x": 574, "y": 403, "dist1": 0 },
+			{ "x": 75, "y": 400, "dist1": 30 },
+			{ "x": 71, "y": 93, "dist1": 40 }]
+	}, {
+		"id": "blackswirley",
+		"curves": ["blackswirley-1", "blackswirley-2"],
+		"image": "blackswirley",
+		"dispname": "Dark Vortex",
+		"frogx": 320, "frogy": 240,
+		"TreasurePoints": [
+			{ "x": 589, "y": 62, "dist1": 0 },
+			{ "x": 48, "y": 441, "dist1": 0 },
+			{ "x": 46, "y": 118, "dist2": 40 }]
+	}, {
+		"id": "serpents",
+		"curves": ["serpents-1", "serpents-2"],
+		"image": "serpents",
+		"dispname": "Mirror Serpent",
+		"skullrot": 0,
+		"frogx": 339, "frogy": 271,
+		"TreasurePoints": [
+			{ "x": 26, "y": 274, "dist1": 34 },
+			{ "x": 38, "y": 433, "dist1": 40 },
+			{ "x": 123, "y": 125, "dist2": 72 }],
+		"Cutouts": [
+			{ "image": "serpentsT", "pri": 1, "x": 0, "y": 0 },
+			{ "image": "serpentsM", "pri": 1, "x": 124, "y": 76 },
+			{ "image": "serpentsB", "pri": 1, "x": 64, "y": 301 }],
+		"BackgroundAlphas": [
+			{ "image": "quake01", "x": 0, "y": 0, "vx": -1, "vy": -1 },
+			{ "image": "quake02", "x": 293, "y": 0, "vx": 1, "vy": -1 },
+			{ "image": "quake03", "x": 81, "y": 138, "vx": 0, "vy": 1 },
+			{ "image": "quake04", "x": 382, "y": 174, "vx": 1, "vy": 1 }]
+	}, {
+		"id": "groovefest",
+		"curves": ["groovefest"],
+		"image": "groovefest",
+		"dispname": "Sand Garden",
+		"frogx": 227, "frogy": 236,
+		"TreasurePoints": [
+			{ "x": 427, "y": 103, "dist1": 0 },
+			{ "x": 587, "y": 438, "dist1": 44 },
+			{ "x": 32, "y": 88, "dist1": 69 }],
+		"Cutouts": [
+			{ "image": "groovefest01", "pri": 1, "x": 402, "y": 0 },
+			{ "image": "groovefest02", "pri": 1, "x": 370, "y": 269 },
+			{ "image": "groovefest03", "pri": 1, "x": 0, "y": 84 }]
+	}, {
+		"id": "riverbed",
+		"curves": ["riverbed"],
+		"image": "riverbed",
+		"dispname": "Riverbed Mosaic",
+		"frogx": 274, "frogy": 264,
+		"TreasurePoints": [
+			{ "x": 577, "y": 54, "dist1": 0 },
+			{ "x": 97, "y": 70, "dist1": 30 },
+			{ "x": 67, "y": 432, "dist1": 40 }],
+		"BackgroundAlphas": [
+			{ "image": "riverbed01", "x": 0, "y": 0, "vx": -1, "vy": -1 },
+			{ "image": "riverbed02", "x": 274, "y": 0, "vx": 1, "vy": -1 },
+			{ "image": "riverbed03", "x": 0, "y": 151, "vx": -1, "vy": 1 },
+			{ "image": "riverbed04", "x": 311, "y": 243, "vx": 1, "vy": 1 },
+			{ "image": "riverbed05", "x": 144, "y": 180, "vx": 0, "vy": 2 }]
+	}, {
+		"id": "snakepit",
+		"curves": ["snakepit-1", "snakepit-2"],
+		"image": "snakepit",
+		"dispname": "Snake Pit",
+		"frogx": 318, "frogy": 240,
+		"TreasurePoints": [
+			{ "x": 591, "y": 426, "dist1": 22 },
+			{ "x": 53, "y": 59, "dist2": 22 }]
+	}, {
+		"id": "targetglyph",
+		"curves": ["targetglyph"],
+		"image": "targetglyph",
+		"dispname": "Breath of Ehecatl",
+		"frogx": 369, "frogy": 222,
+		"TreasurePoints": [
+			{ "x": 73, "y": 142, "dist1": 30 },
+			{ "x": 595, "y": 350, "dist1": 50 },
+			{ "x": 580, "y": 55, "dist1": 60 }]
+	}, {
+		"id": "tunnellevel",
+		"curves": ["tunnellevel"],
+		"image": "tunnellevel",
+		"dispname": "Shrine of Quetzalcoatl",
+		"frogx": 215, "frogy": 240,
+		"TreasurePoints": [
+			{ "x": 536, "y": 243, "dist1": 10 },
+			{ "x": 312, "y": 420, "dist1": 60 }],
+		"Cutouts": [
+			{ "image": "tunnel1", "pri": 1, "x": 0, "y": 253 },
+			{ "image": "tunnel2", "pri": 1, "x": 230, "y": 0 }]
+	}, {
+		"id": "space",
+		"curves": ["space"],
+		"space": true,
+		"frogx": 246, "frogy": 188
+	}],
+	"Settings": [
+		{ "id": "level1",  "speed": 0.50, "start": 35, "score": 1000, "repeat": 50, "colors": 4, "reloaddelay": 0, "mergespeed": 0.05, "firespeed": 6 },
+		{ "id": "level2",  "speed": 0.60, "start": 40, "score": 1500 },
+		{ "id": "level3",  "speed": 0.70, "start": 45, "score": 2000 },
+		{ "id": "level4",  "speed": 0.75, "start": 50, "score": 2500 },
+		{ "id": "level5",  "speed": 0.80, "start": 55, "score": 3000 },
+		{ "id": "level6",  "speed": 0.85, "start": 60, "score": 3500 },
+		{ "id": "level7",  "speed": 0.90, "start": 65, "score": 4000 },
+		{ "id": "level8",  "speed": 0.95, "start": 70, "score": 4500 },
+		{ "id": "level9",  "speed": 0.95, "start": 75, "score": 5000, "slowfactor": 3.5 },
+		{ "id": "level10", "speed": 1.00, "start": 75, "score": 5000, "slowfactor": 3 },
+		{ "id": "level11", "speed": 1.00, "start": 70, "score": 5000, "slowfactor": 2.5 },
+		{ "id": "level12", "speed": 0.95, "start": 65, "score": 5000, "slowfactor": 2 },
+		{ "id": "level13", "speed": 0.80, "start": 60, "score": 5000, "slowfactor": 1.5 },
+		{ "id": "level14", "speed": 0.75, "start": 55, "score": 5000, "slowfactor": 1 },
+		{ "id": "level15", "speed": 0.80, "start": 50, "score": 5000, "slowfactor": 1 },
+		{ "id": "level16", "speed": 0.85, "start": 40, "score": 5000, "slowfactor": 1, "powerfreq": 2500 },
+		{ "id": "level17", "speed": 0.95, "start": 35, "score": 5000, "slowfactor": 1, "powerfreq": 2300 },
+		{ "id": "level18", "speed": 1.00, "start": 35, "score": 5000, "slowfactor": 1, "powerfreq": 2100 },
+		{ "id": "level19", "speed": 1.00, "start": 40, "score": 5000, "slowfactor": 1, "powerfreq": 1900 },
+		{ "id": "level20", "speed": 1.05, "start": 45, "score": 5000, "slowfactor": 1, "powerfreq": 1700 },
+		{ "id": "level21", "speed": 1.05, "start": 50, "score": 5000, "slowfactor": 1, "powerfreq": 1500 },
+		{ "id": "level22", "speed": 1.10, "start": 55, "score": 5000, "slowfactor": 1, "powerfreq": 1500 },
+		{ "id": "level23", "speed": 1.15, "start": 60, "score": 5000, "slowfactor": 1, "powerfreq": 1400 },
+		{ "id": "level24", "speed": 1.20, "start": 65, "score": 5000, "slowfactor": 1, "powerfreq": 1300 },
+		{ "id": "level25", "speed": 1.25, "start": 70, "score": 5000, "slowfactor": 1, "powerfreq": 1200 },
+		{ "id": "level26", "speed": 1.30, "start": 75, "score": 5000, "slowfactor": 1, "powerfreq": 1100 },
+		{ "id": "level27", "speed": 1.35, "start": 80, "score": 5000, "slowfactor": 1, "powerfreq": 1000 },
+		{ "id": "level28", "speed": 1.40, "start": 80, "score": 5000, "slowfactor": 1, "powerfreq": 1000 },
+		{ "id": "level29", "speed": 1.45, "start": 80, "score": 5000, "slowfactor": 1, "powerfreq": 1000 },
+		{ "id": "level30", "speed": 1.50, "start": 80, "score": 5000, "slowfactor": 1, "powerfreq": 1000 },
+
+		{ "id": "lvl11", "speed": 0.5,  "start": 35, "score": 1000, "repeat": 50, "colors": 4, "reloaddelay": 0, "mergespeed": 0.05, "firespeed": 6, "partime": 25 },
+		{ "id": "lvl12", "speed": 0.5,  "start": 35, "score": 1000, "repeat": 50, "colors": 4, "reloaddelay": 0, "mergespeed": 0.05, "firespeed": 6, "partime": 35 },
+		{ "id": "lvl13", "speed": 0.60, "start": 40, "score": 1500, "partime": 35 },
+		{ "id": "lvl14", "speed": 0.60, "start": 40, "score": 1500, "partime": 60 },
+		{ "id": "lvl15", "speed": 0.60, "start": 35, "score": 3500, "partime": 135 },
+
+		{ "id": "lvl21", "speed": 0.75, "start": 50, "score": 2500, "partime": 60 },
+		{ "id": "lvl22", "speed": 0.75, "start": 50, "score": 2500, "partime": 75 },
+		{ "id": "lvl23", "speed": 0.80, "start": 55, "score": 3000, "partime": 100 },
+		{ "id": "lvl24", "speed": 0.80, "start": 55, "score": 3000, "partime": 75 },
+		{ "id": "lvl25", "speed": 0.55, "start": 30, "score": 3000, "partime": 80 },
+		
+		{ "id": "lvl31", "speed": 0.85, "start": 65, "score": 3500, "partime": 70 },
+		{ "id": "lvl32", "speed": 0.90, "start": 65, "score": 3500, "partime": 70 },
+		{ "id": "lvl33", "speed": 0.90, "start": 70, "score": 4000, "partime": 80 },
+		{ "id": "lvl34", "speed": 0.90, "start": 60, "score": 4500, "slowfactor": 4.0, "partime": 90 },
+		{ "id": "lvl35", "speed": 0.60, "start": 45, "score": 4500, "single": 8, "zumaslow": 500, "zumaback": 200, "partime": 130 },
+
+		{ "id": "lvl41", "speed": 0.70, "start": 45, "score": 2000, "partime": 70 },
+		{ "id": "lvl42", "speed": 0.70, "start": 45, "score": 2000, "partime": 70 },
+		{ "id": "lvl43", "speed": 0.75, "start": 50, "score": 2500, "slowfactor": 3.5, "partime": 70 },
+		{ "id": "lvl44", "speed": 0.75, "start": 55, "score": 3000, "partime": 95 },
+		{ "id": "lvl45", "speed": 0.55, "start": 35, "score": 3500, "slowfactor": 3.5, "partime": 110 },
+		{ "id": "lvl46", "speed": 0.70, "start": 55, "score": 3500, "slowfactor": 3.5, "partime": 90 },
+
+		{ "id": "lvl51", "speed": 0.75, "start": 55, "score": 3500, "partime": 130 },
+		{ "id": "lvl52", "speed": 0.80, "start": 60, "score": 3500, "partime": 120 },
+		{ "id": "lvl53", "speed": 0.80, "start": 60, "score": 4000, "slowfactor": 3.5, "partime": 110 },
+		{ "id": "lvl54", "speed": 0.85, "start": 65, "score": 4000, "slowfactor": 4.0, "partime": 150 },
+		{ "id": "lvl55", "speed": 0.65, "start": 40, "score": 4000, "partime": 130 },	
+		{ "id": "lvl56", "speed": 0.85, "start": 65, "score": 4000, "slowfactor": 4.0, "partime": 130 },
+
+		{ "id": "lvl61", "speed": 0.90, "start": 70, "score": 4500, "single": 8, "partime": 140 },
+		{ "id": "lvl62", "speed": 0.95, "start": 65, "score": 4500, "single": 8, "partime": 160 },
+		{ "id": "lvl63", "speed": 0.90, "start": 75, "score": 4500, "slowfactor": 3.5, "partime": 140 },
+		{ "id": "lvl64", "speed": 0.90, "start": 55, "score": 4500, "slowfactor": 3.5, "partime": 150, "single": 7 },
+		{ "id": "lvl65", "speed": 0.65, "start": 45, "score": 4000, "slowfactor": 4.2, "partime": 180, "single": 7 },
+		{ "id": "lvl66", "speed": 0.90, "start": 65, "score": 4500, "slowfactor": 3.5, "partime": 180 },
+
+		{ "id": "lvl71", "speed": 0.70, "start": 55, "score": 2500, "slowfactor": 3.5, "partime": 100 },
+		{ "id": "lvl72", "speed": 0.70, "start": 55, "score": 2500, "slowfactor": 4.0, "partime": 90 },
+		{ "id": "lvl73", "speed": 0.75, "start": 55, "score": 3000, "slowfactor": 3.5, "partime": 115 },
+		{ "id": "lvl74", "speed": 0.75, "start": 50, "score": 3500, "slowfactor": 3.5, "partime": 125 },
+		{ "id": "lvl75", "speed": 0.60, "start": 40, "score": 3500, "single": 7, "partime": 155 },
+		{ "id": "lvl76", "speed": 0.75, "start": 60, "score": 3500, "slowfactor": 3.5, "partime": 160 },
+		{ "id": "lvl77", "speed": 0.85, "start": 60, "score": 3500, "single": 9, "partime": 150 },
+
+		{ "id": "lvl81", "speed": 0.80, "start": 60, "score": 3500, "partime": 135 },
+		{ "id": "lvl82", "speed": 0.85, "start": 60, "score": 4000, "partime": 135 },
+		{ "id": "lvl83", "speed": 0.85, "start": 65, "score": 4000, "slowfactor": 3.5, "partime": 155 },
+		{ "id": "lvl84", "speed": 0.85, "start": 70, "score": 4500, "slowfactor": 3.5, "partime": 155 },
+		{ "id": "lvl85", "speed": 0.60, "start": 45, "score": 4000, "partime": 130 },
+		{ "id": "lvl86", "speed": 0.90, "start": 65, "score": 4500, "partime": 170 },
+		{ "id": "lvl87", "speed": 0.90, "start": 70, "score": 4500, "partime": 170 },
+
+		{ "id": "lvl91", "speed": 0.90, "start": 70, "score": 4500, "slowfactor": 3.5, "partime": 170 },
+		{ "id": "lvl92", "speed": 0.90, "start": 70, "score": 4500, "slowfactor": 3.5, "single": 8, "partime": 155 },
+		{ "id": "lvl93", "speed": 0.95, "start": 70, "score": 4500, "slowfactor": 3.5, "partime": 155 },
+		{ "id": "lvl94", "speed": 0.90, "start": 65, "score": 4500, "slowfactor": 3.0, "single": 8, "partime": 180 },
+		{ "id": "lvl95", "speed": 0.70, "start": 50, "score": 4500, "slowfactor": 4.0, "partime": 180 },
+		{ "id": "lvl96", "speed": 0.90, "start": 65, "score": 4500, "single": 8, "slowfactor": 3.0, "partime": 170 },
+		{ "id": "lvl97", "speed": 0.90, "start": 65, "score": 4500, "slowfactor": 2.5, "partime": 165 },
+
+		{ "id": "lvl101", "speed": 0.75, "start": 60, "score": 5000, "slowfactor": 3.0, "partime": 160 },
+		{ "id": "lvl102", "speed": 0.75, "start": 60, "score": 5000, "slowfactor": 3.5, "partime": 155 },
+		{ "id": "lvl103", "speed": 0.80, "start": 65, "score": 5000, "slowfactor": 3.5, "partime": 170 },
+		{ "id": "lvl104", "speed": 0.80, "start": 65, "score": 5000, "slowfactor": 3.5, "partime": 160 },
+		{ "id": "lvl105", "speed": 0.60, "start": 55, "score": 5000, "slowfactor": 3.5, "single": 8, "partime": 195 },
+		{ "id": "lvl106", "speed": 0.85, "start": 70, "score": 5000, "slowfactor": 3.5, "partime": 200 },
+		{ "id": "lvl107", "speed": 0.90, "start": 75, "score": 5000, "partime": 195 },
+
+		{ "id": "lvl111", "speed": 0.90, "start": 70, "score": 5000, "partime": 170 },
+		{ "id": "lvl112", "speed": 0.90, "start": 70, "score": 5000, "partime": 165 },
+		{ "id": "lvl113", "speed": 0.95, "start": 75, "score": 5000, "slowfactor": 3.5, "partime": 170 },
+		{ "id": "lvl114", "speed": 0.95, "start": 75, "score": 5000, "partime": 145 },
+		{ "id": "lvl115", "speed": 0.65, "start": 45, "score": 5000, "slowfactor": 3.5, "partime": 180 },
+		{ "id": "lvl116", "speed": 0.95, "start": 80, "score": 5000, "partime": 200 },
+		{ "id": "lvl117", "speed": 0.95, "start": 80, "score": 5000, "partime": 195 },
+
+		{ "id": "lvl121", "speed": 1.00, "start": 75, "score": 5000, "slowfactor": 3, "partime": 190 },
+		{ "id": "lvl122", "speed": 1.00, "start": 70, "score": 5000, "slowfactor": 3, "partime": 180 },
+		{ "id": "lvl123", "speed": 1.00, "start": 70, "score": 5000, "slowfactor": 3, "partime": 180 },
+		{ "id": "lvl124", "speed": 1.00, "start": 70, "score": 5000, "slowfactor": 3.0, "partime": 180 },
+		{ "id": "lvl125", "speed": 0.78, "start": 45, "score": 5000, "slowfactor": 3.5, "single": 7, "partime": 180 },
+		{ "id": "lvl126", "speed": 0.95, "start": 65, "score": 5000, "slowfactor": 2, "partime": 180 },
+		{ "id": "lvl127", "speed": 0.95, "start": 65, "score": 5000, "slowfactor": 2, "partime": 165 },
+
+		{ "id": "lvl131", "speed": 0.85, "start": 50, "score": 10000, "slowfactor": 3, "partime": 240 },
+		
+		{ "id": "dual1",  "speed": 0.45, "start": 20, "score": 2000 },
+		{ "id": "dual2",  "speed": 0.50, "start": 25, "score": 2500 },
+		{ "id": "dual3",  "speed": 0.55, "start": 30, "score": 3000 },
+		{ "id": "dual4",  "speed": 0.60, "start": 35, "score": 3500 },
+		{ "id": "dual5",  "speed": 0.65, "start": 40, "score": 4000 },
+		{ "id": "dual6",  "speed": 0.70, "start": 45, "score": 4500 },
+		{ "id": "dual7",  "speed": 0.75, "start": 50, "score": 5000 },
+		{ "id": "dual8",  "speed": 0.80, "start": 50, "score": 4500 },
+		{ "id": "dual9",  "speed": 0.80, "start": 50, "score": 4500, "slowfactor": 3.5 },
+		{ "id": "dual10", "speed": 0.85, "start": 45, "score": 4500, "slowfactor": 3.5 },
+		{ "id": "dual11", "speed": 0.80, "start": 45, "score": 4500, "slowfactor": 3 },
+		{ "id": "dual12", "speed": 0.85, "start": 40, "score": 4500, "slowfactor": 3 },
+		{ "id": "dual13", "speed": 0.80, "start": 45, "score": 4500, "slowfactor": 2.5, "powerfreq": 2900 },
+		{ "id": "dual14", "speed": 0.80, "start": 50, "score": 5000, "slowfactor": 2.5, "powerfreq": 2800 },
+		{ "id": "dual15", "speed": 0.80, "start": 45, "score": 5000, "slowfactor": 2, "repeat": 42, "powerfreq": 2700 },
+		{ "id": "dual16", "speed": 0.80, "start": 50, "score": 5000, "slowfactor": 2, "repeat": 44, "powerfreq": 2600 },
+		{ "id": "dual17", "speed": 0.70, "start": 40, "score": 5000, "slowfactor": 1, "repeat": 46, "powerfreq": 2500 },
+		{ "id": "dual18", "speed": 0.75, "start": 40, "score": 5000, "slowfactor": 1, "repeat": 48, "powerfreq": 2400 },
+		{ "id": "dual19", "speed": 0.75, "start": 45, "score": 5000, "slowfactor": 1, "repeat": 50, "powerfreq": 2300 },
+		{ "id": "dual20", "speed": 0.80, "start": 45, "score": 5000, "slowfactor": 1, "repeat": 50, "powerfreq": 2200 },
+		{ "id": "dual21", "speed": 0.85, "start": 50, "score": 5000, "slowfactor": 1, "repeat": 50, "powerfreq": 2100 },
+		{ "id": "dual22", "speed": 0.90, "start": 55, "score": 5000, "slowfactor": 1, "repeat": 45, "powerfreq": 2500 },
+		{ "id": "dual23", "speed": 0.95, "start": 55, "score": 5000, "slowfactor": 1, "powerfreq": 2400 },
+		{ "id": "dual24", "speed": 1.00, "start": 60, "score": 5000, "slowfactor": 1, "powerfreq": 2300 }
+	],
+	"LevelProgressions": [{
+		"id": "dual",
+		"settings": ["dual1","dual2","dual3","dual4","dual5","dual6","dual7","dual8","dual9","dual10","dual11","dual12","dual13","dual14","dual15","dual16","dual17","dual18","dual19","dual20","dual21","dual22","dual23","dual24"],
+		"difficulty": [4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27]
+	}, {
+		"id": "standard",
+		"settings": ["level1","level2","level3","level4","level5","level6","level7","level8","level9","level10","level11","level12","level13","level14","level15","level16","level17","level18","level19","level20","level21","level22","level23","level24","level25","level26","level27","level28","level29","level30"],
+		"difficulty": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
+	}],
+	"Levels": [
+		{ "graphics": "spiral", "progression": "standard" },
+		{ "graphics": "riverbed", "progression": "standard" },
+		{ "graphics": "targetglyph", "progression": "standard" },
+		{ "graphics": "tunnellevel", "progression": "standard" },
+		{ "graphics": "groovefest", "progression": "standard" },
+		{ "graphics": "blackswirley", "progression": "dual" },
+		{ "graphics": "snakepit", "progression": "dual" },
+		{ "graphics": "serpents", "progression": "dual" },
+		
+		{ "graphics": "longrange", "progression": "standard" },
+		{ "graphics": "tiltspiral", "progression": "standard" },
+		{ "graphics": "underover", "progression": "standard" },
+		{ "graphics": "claw", "progression": "standard" },
+		{ "graphics": "triangle", "progression": "standard" },
+		{ "graphics": "inversespiral", "progression": "standard" },
+		{ "graphics": "loopy", "progression": "standard" },
+		{ "graphics": "turnaround", "progression": "standard" },
+		{ "graphics": "squaresville", "progression": "standard" },
+		{ "graphics": "warshak", "progression": "standard" },
+		{ "graphics": "overunder", "progression": "standard" },
+		{ "graphics": "spaceinvaders", "progression": "standard" },
+		{ "graphics": "coaster", "progression": "standard" },
+		
+		{ "graphics": "space", "progression": "standard" }
+	],
+	"StageProgressions": {
+		"stage1": "spiral,claw,riverbed,targetglyph,blackswirley",
+		"diffi1": "lvl11,lvl12,lvl13,lvl14,lvl15",
+		"stage2": "tiltspiral,underover,warshak,loopy,snakepit",
+		"diffi2": "lvl21,lvl22,lvl23,lvl24,lvl25",
+		"stage3": "triangle,coaster,squaresville,tunnellevel,serpents",
+		"diffi3": "lvl31,lvl32,lvl33,lvl34,lvl35",
+	
+		"stage4": "spiral,claw,riverbed,targetglyph,blackswirley,turnaround",
+		"diffi4": "lvl41,lvl42,lvl43,lvl44,lvl45,lvl46",
+		"stage5": "tiltspiral,underover,warshak,loopy,snakepit,groovefest",
+		"diffi5": "lvl51,lvl52,lvl53,lvl54,lvl55,lvl56",
+		"stage6": "triangle,coaster,squaresville,tunnellevel,serpents,overunder",
+		"diffi6": "lvl61,lvl62,lvl63,lvl64,lvl65,lvl66",
+	
+		"stage7": "spiral,claw,riverbed,targetglyph,blackswirley,turnaround,longrange",
+		"diffi7": "lvl71,lvl72,lvl73,lvl74,lvl75,lvl76,lvl77",
+		"stage8": "tiltspiral,underover,warshak,loopy,snakepit,groovefest,spaceinvaders",
+		"diffi8": "lvl81,lvl82,lvl83,lvl84,lvl85,lvl86,lvl87",
+		"stage9": "triangle,coaster,squaresville,tunnellevel,serpents,overunder,inversespiral",
+		"diffi9": "lvl91,lvl92,lvl93,lvl94,lvl95,lvl96,lvl97",
+	
+		"stage10": "spiral,claw,riverbed,targetglyph,blackswirley,turnaround,longrange",
+		"diffi10": "lvl101,lvl102,lvl103,lvl104,lvl105,lvl106,lvl107",
+		"stage11": "tiltspiral,underover,warshak,loopy,snakepit,groovefest,spaceinvaders",
+		"diffi11": "lvl111,lvl112,lvl113,lvl114,lvl115,lvl116,lvl117",
+		"stage12": "triangle,coaster,squaresville,tunnellevel,serpents,overunder,inversespiral",
+		"diffi12": "lvl121,lvl122,lvl123,lvl124,lvl125,lvl126,lvl127",
+	
+		"stage13": "space",
+		"diffi13": "lvl131"
+	}
+}

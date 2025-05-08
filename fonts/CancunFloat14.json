@@ -12,7 +12,7 @@
 			"Chars": "CharList",
 			"CharWidths": "WidthList",
 			"CharOffsets": "OffsetList",
-			"ImageMap": "RectList",
+			"CharSrcRects": "RectList",
 			"Kerning": ["KerningPairs", "KerningValues"],
 			"SpaceWidth": 6,
 			"Ascent": 18,

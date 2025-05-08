@@ -1,7 +1,6 @@
 package main
 
 type LevelDesc struct {
-	Id                                         int32
 	Name, DisplayName, ImagePath               string
 	FireSpeed                                  float32
 	ReloadDelay                                int32
@@ -10,6 +9,30 @@ type LevelDesc struct {
 	IsInSpace                                  bool
 	Stage, Level                               int32
 	CurveDescs                                 []CurveDesc
+	TreasurePoints                             []TreasurePoint
+	Sprites                                    []SpriteDesc
+	BackgroundAlphas                           []SpriteDesc
+}
+
+type TreasurePoint struct {
+	X, Y      int32
+	CurveDist []int32
+}
+
+type SpriteDesc struct {
+	ImagePath      string
+	Priority, X, Y int32
+	VX, VY         float32
+	IsCutout       bool
+}
+
+type LevelDescModify struct {
+	FireSpeed    *float32
+	ReloadDelay  *int32
+	TreasureFreq *int32
+	ParTime      int32
+	IsInSpace    *bool
+	CurveDesc    CurveDesc
 }
 
 func NewLevelDesc() *LevelDesc {
@@ -23,6 +46,7 @@ func NewLevelDesc() *LevelDesc {
 }
 
 type CurveDesc struct {
+	FilePath           string
 	DangerDistance     int32
 	StartDistance      int32
 	Speed              float32
